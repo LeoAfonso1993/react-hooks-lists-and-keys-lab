@@ -3,7 +3,13 @@ import React from "react";
 function NavBar() {
   const links = ["home", "about", "projects"];
 
-  return <nav>{/* display an <a> tag for each link here */}</nav>;
+  function CreateLinks() {
+    return (
+      links.map((link) => <a key={link} href={'#'+link}>{link}</a>
+    ))
+  }
+
+  return <nav>{ CreateLinks() }</nav>;
 }
 
 export default NavBar;
